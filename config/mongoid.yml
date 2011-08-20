@@ -1,11 +1,11 @@
 development:
   host: localhost
-  database: lucre_development
+  database: skillet_development
   preload_models: true
 
 test:
   host: localhost
-  database: lucre_test
+  database: skillet_test
   preload_models: true  
 
 # set these environment variables on your prod server

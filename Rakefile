@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Lucre::Application.load_tasks
+Skillet::Application.load_tasks

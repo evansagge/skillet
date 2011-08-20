@@ -1,4 +1,4 @@
-Lucre::Application.routes.draw do
+Skillet::Application.routes.draw do
   devise_for :user, module: :user, path: '',
     path_names: { sign_up: 'signup', sign_in: 'login', sign_out: 'logout' }
       
