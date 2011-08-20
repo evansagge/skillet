@@ -1,22 +1,18 @@
 require 'spec_helper'
 
-describe "users/edit.html.slim" do
-  before(:each) do
-    @user = assign(:user, stub_model(User,
-      :email => "MyString",
-      :password => "MyString",
-      :password_confirmation => "MyString"
-    ))
-  end
-
-  it "renders the edit user form" do
+describe "user/edit.html.slim" do
+  let!(:user) { assign :user, Fabricate(:user) }  
+  
+  before do
     render
-
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => users_path(@user), :method => "post" do
-      assert_select "input#user_email", :name => "user[email]"
-      assert_select "input#user_password", :name => "user[password]"
-      assert_select "input#user_password_confirmation", :name => "user[password_confirmation]"
+  end
+  
+  it "renders the edit user form" do
+    rendered.should have_selector "form", action: user_path, method: 'post' do
+      rendered.should have_selector "input#user_email", name: "user[email]", type: "email", disabled: true
+      rendered.should have_selector "input#current_password", name: "user[current_password]", type: "password"
+      rendered.should have_selector "input#password", name: "user[current_password]", type: "password"
+      rendered.should have_selector "input#password_confirmation", name: "user[current_password]", type: "password"
     end
   end
 end

@@ -23,13 +23,13 @@ end
 shared_examples_for "it requires authenticated access" do
   it 'redirects to the home page' do
     response.should redirect_to root_url
-    flash[:alert].should == "You need to be logged in to access this page."
+    flash[:alert].should == I18n.t('devise.failure.unauthenticated')
   end
 end
 
 shared_examples_for "it requires unauthenticated access" do
   it 'redirects to the home page' do
     response.should redirect_to root_url
-    flash[:alert].should == "You need to be logged out to access this page."
+    flash[:alert].should == I18n.t('devise.failure.already_authenticated')
   end
 end

@@ -9,3 +9,6 @@ h2 Sign Up
   = f.input :password_confirmation, label: 'Confirm Password', placeholder: 'Re-enter your password', hint: 'Fill in only if you want to change your password'
 
   = f.button :submit, 'Change Password'
+  
+  ul.links
+    li = link_to "Delete my Account", user_url, method: 'delete', confirm: "Are you sure you want to delete your account?"

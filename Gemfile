@@ -29,6 +29,13 @@ group :development do
   gem 'capistrano'
   gem 'thin'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'guard-pow'
+  
+  gem 'growl'
 end
 
 group :test do
@@ -39,7 +46,8 @@ group :test do
   gem 'forgery'
   gem 'database_cleaner'
   
+  gem 'capybara'
+  # gem 'webrat'
+  
   gem 'spork'
-  gem 'guard-spork'
-  gem 'guard-rspec'
 end

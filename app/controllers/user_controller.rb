@@ -15,7 +15,10 @@ class UserController < ApplicationController
 
     respond_with @user do |format|
       if @user.save
-        format.html { render :created }
+        format.html do
+          flash[:notice] = I18n.t('devise.registrations.inactive_signed_up')
+          render :created
+        end
       else
         format.html { render :new }
       end
@@ -37,7 +40,9 @@ class UserController < ApplicationController
 
   def destroy
     @user.destroy
-    respond_with @user, :notice => "Your account has been deleted.", location: root_url
+    flash[:notice] = "Your account has been deleted."
+    sign_out :user
+    respond_with @user, location: root_url
   end
   
   protected

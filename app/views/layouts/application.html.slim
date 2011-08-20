@@ -3,10 +3,12 @@ html
   head
     title Lucre
     meta name="keywords" content="template language"
-    = stylesheet_link_tag 'application', :media => 'screen, projection', :debug => Rails.env.development?
-    = stylesheet_link_tag 'print', :media => 'print'
+    = stylesheet_link_tag 'application', media: 'screen, projection', debug: Rails.env.development?
+    = stylesheet_link_tag 'print', media: 'print'
     /[if lt IE 8]
-      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+      = stylesheet_link_tag 'ie', media: 'screen, projection'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
       
   body
     div id="container"

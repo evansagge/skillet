@@ -1,21 +1,14 @@
 require 'spec_helper'
 
-describe "users/show.html.slim" do
-  before(:each) do
-    @user = assign(:user, stub_model(User,
-      :email => "Email",
-      :password => "Password",
-      :password_confirmation => "Password Confirmation"
-    ))
+describe "user/show.html.slim" do
+  let!(:user) { assign :user, Fabricate(:user, :last_sign_in_at => 2.days.ago) }
+  
+  before do
+    render
   end
 
   it "renders attributes in <p>" do
-    render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Email/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Password/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Password Confirmation/)
+    rendered.should match %r(Email(.+)#{user.email})
+    rendered.should match %r(Last sign in at(.+))
   end
 end
