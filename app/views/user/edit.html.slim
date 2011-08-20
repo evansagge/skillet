@@ -1,0 +1,11 @@
+h2 Sign Up
+
+= simple_form_for @user, url: user_path, html: { method: 'put' } do |f|
+  == f.error_notification
+  
+  = f.input :email, disabled: true
+  = f.input :current_password, placeholder: 'Enter your current password'
+  = f.input :password, placeholder: 'Enter a valid password', hint: 'Fill in only if you want to change your password'
+  = f.input :password_confirmation, label: 'Confirm Password', placeholder: 'Re-enter your password', hint: 'Fill in only if you want to change your password'
+
+  = f.button :submit, 'Change Password'

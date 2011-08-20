@@ -1,0 +1,124 @@
+@import "blueprint";
+
+$form-label-width: 150px;
+$form-input-width: 250px;
+$form-textarea-width: 390px;
+$form-textarea-height: 250px;
+$form-background-color: #efefef;
+$form-unfocused-border-color: #bbbbbb; 
+$form-focus-border-color: #666666;
+$form-fieldset-border-color: #cccccc;
+
+form {
+  @include blueprint-form-layout;
+  @include blueprint-form-sizes($form-input-width, $form-textarea-width, $form-textarea-height);
+  @include blueprint-form-borders($form-unfocused-border-color, $form-focus-border-color, $form-fieldset-border-color);
+    
+  .error {
+    clear: left;
+    color: black;
+    display: block;
+    margin-left: $form-label-width + 20px;
+    font-size: 12px; 
+  }
+
+  .hint {
+    clear: left;
+    margin-left: 120px;
+    font-size: 90%;
+    color: #555555;
+    display: block;
+    margin-left: $form-label-width + 20px; 
+  }   
+  
+  abbr[title=required] {
+    display: none;
+  }
+  
+  div.input {
+    margin-bottom: 10px; 
+    
+    &.boolean {
+      margin-left: $form-label-width + 20px; 
+    }
+  }  
+    
+  label {
+    float: left;
+    width: $form-label-width;
+    text-align: right;
+    margin: 10px 10px; 
+    
+    &.collection_check_boxes {
+      float: none;
+      margin: 0;
+      vertical-align: -2px;
+      margin-left: 2px; 
+    }
+    
+    &.collection_radio {
+      margin-right: 10px;
+      vertical-align: -2px;
+      margin-left: 2px; 
+    }    
+  }
+  
+  input {
+    &.text, &.title, &[type=email], &[type=text], &[type=password], &.string, &.button {
+      background: $form-background-color;
+    }
+          
+    &.radio {
+      margin-right: 5px;
+      vertical-align: -3px; 
+    }
+    
+    &.check_boxes {
+      margin-left: 3px;
+      vertical-align: -3px; 
+    }
+    
+    &.button {
+      margin-left: $form-label-width + 20px;
+      margin-bottom: 10px;
+      padding: 5px 10px 5px 10px;
+      font-weight: bold;
+      border: 1px solid $form-unfocused-border-color;
+      
+      &:focus {
+        border-color: $form-focus-border-color;
+      }
+    }
+  }
+  
+  textarea {
+    background: $form-background-color;
+  }
+
+  div.boolean label, label.collection_radio {
+    float: none;
+    margin: 0; 
+    font-weight: normal;
+  }
+  
+  ul.links {
+    margin: 5px 5px 10px ($form-label-width + 20px);
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .field_with_errors {
+    background-color: $error-bg-color;
+    border: 2px solid $error-border-color;    
+    
+    .error {
+      border: none;
+      background: none;
+      display: inline;
+      // margin-left:($form-label-width + 20px);
+      margin: 0 0 0 5px;
+      padding: 0;
+    }
+  }  
+}
+

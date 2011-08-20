@@ -1,0 +1,9 @@
+h2 Resend confirmation instructions
+
+= simple_form_for @user, :url => user_confirmation_path do |f|
+  = f.error_notification
+  
+  = f.input :email, :required => true
+  = f.button :submit, "Resend confirmation instructions"
+  
+  == render 'user/shared/links'

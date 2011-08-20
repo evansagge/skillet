@@ -1,0 +1,7 @@
+h2 User Profile
+
+= show_for @user do |u|
+  = u.attribute :email
+  = u.attribute :last_sign_in_at
+  
+p = link_to "Edit Profile", edit_user_url

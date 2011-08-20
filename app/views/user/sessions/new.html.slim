@@ -1,0 +1,14 @@
+h2 Log In
+
+= simple_form_for :user, url: user_session_path do |f|
+  = f.error_notification
+  
+  div class="inputs"
+    = f.input :email, autofocus: true, placeholder: 'Enter your e-mail address'
+    = f.input :password, placeholder: 'Enter your password'
+    = f.input :remember_me, as: :boolean, label: 'Remember me next time'
+    
+  div class="actions"
+    = f.button :submit, 'Login'
+    
+  == render 'user/shared/links'

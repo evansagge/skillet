@@ -1,0 +1,5 @@
+p = "Welcome #{@user.email}!"
+
+p You can confirm your account through the link below:
+
+p = link_to 'Confirm my account', user_confirmation_url(:confirmation_token => @user.confirmation_token)

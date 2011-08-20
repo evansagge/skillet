@@ -1,0 +1,13 @@
+h2 Change your password
+
+= simple_form_for @user, url: user_password_path, html: { method: 'put' } do |f|
+  = f.error_notification
+  
+  = f.full_error :reset_password_token
+  = f.input :reset_password_token, :as => :hidden  
+  = f.input :password, :label => "Password", :required => true
+  = f.input :password_confirmation, :label => "Confirm Password", :required => true
+  = f.button :submit, "Change my password"
+  
+  ul class="links"
+    li = link_to "Request for another request password token", new_user_password_path

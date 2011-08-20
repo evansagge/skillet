@@ -1,0 +1,12 @@
+h2 Sign Up
+
+= simple_form_for @user, url: signup_path do |f|
+  == f.error_notification
+  
+  = f.input :email, autofocus: true, placeholder: 'Enter a valid e-mail address', input_html: { class: 'short' }
+  = f.input :password, placeholder: 'Enter a valid password', input_html: { class: 'short' }
+  = f.input :password_confirmation, label: 'Confirm Password', placeholder: 'Re-enter your password', input_html: { class: 'short' }
+
+  = f.button :submit, 'Sign Up'
+    
+  == render 'user/shared/links'

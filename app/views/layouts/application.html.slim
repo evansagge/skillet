@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Lucre
+    meta name="keywords" content="template language"
+    = stylesheet_link_tag 'application', :media => 'screen, projection', :debug => Rails.env.development?
+    = stylesheet_link_tag 'print', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+      
+  body
+    div id="container"
+      div id="header"
+        h1 Sample Application
+      div id="flash"
+        == render 'shared/flash_messages'
+      div id="content"
+        == yield
+      div id="sidebar"
+      div id="footer"
+      
