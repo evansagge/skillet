@@ -18,7 +18,7 @@ describe User::PasswordsController do
   end
   
   describe "POST create" do
-    context "with a valid e-mail" do
+    context "with a valid email" do
       subject { post :create, user: { email: user.email } }
       
       it "sends the reset password instructions to the user" do
@@ -37,7 +37,7 @@ describe User::PasswordsController do
       end
     end
     
-    context "with invalid e-mail" do
+    context "with invalid email" do
       subject { post :create, user: { email: 'someemail@doesnotexist.com' } }
       
       it "does not send any reset password instructions" do

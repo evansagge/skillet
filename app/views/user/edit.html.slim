@@ -1,14 +1,14 @@
-h2 Sign Up
+h2 = t('users.headers.edit')
 
 = simple_form_for @user, url: user_path, html: { method: 'put' } do |f|
   == f.error_notification
   
   = f.input :email, disabled: true
-  = f.input :current_password, placeholder: 'Enter your current password'
-  = f.input :password, placeholder: 'Enter a valid password', hint: 'Fill in only if you want to change your password'
-  = f.input :password_confirmation, label: 'Confirm Password', placeholder: 'Re-enter your password', hint: 'Fill in only if you want to change your password'
+  = f.input :current_password
+  = f.input :password
+  = f.input :password_confirmation
 
-  = f.button :submit, 'Change Password'
+  = f.button :submit, t('users.buttons.update')
   
   ul.links
-    li = link_to "Delete my Account", user_url, method: 'delete', confirm: "Are you sure you want to delete your account?"
+    li = link_to t('users.links.delete'), user_url, method: 'delete', confirm: t('users.destroy.confirmation')

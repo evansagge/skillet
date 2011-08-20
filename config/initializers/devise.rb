@@ -2,10 +2,10 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   # ==> Mailer Configuration
-  # Configure the e-mail address which will be shown in DeviseMailer.
+  # Configure the email address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
-  # Configure the class responsible to send e-mails.
+  # Configure the class responsible to send emails.
   # config.mailer = "Devise::Mailer"
 
   # ==> ORM configuration
@@ -54,7 +54,7 @@ Devise.setup do |config|
   # config.http_authentication_realm = "Application"
 
   # It will change confirmation, password recovery and other workflows
-  # to behave the same regardless if the e-mail provided was right or wrong.
+  # to behave the same regardless if the email provided was right or wrong.
   # Does not affect registerable.
   config.paranoid = false
 

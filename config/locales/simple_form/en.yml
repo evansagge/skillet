@@ -1,0 +1,38 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      html: '<abbr title="required"></abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+    labels:
+      user:
+        email: Email
+        current_password: Current Password
+        remember_me: Remember me next time
+        new:
+          password: Password
+          password_confirmation: Confirm Password          
+        edit:
+          password: New Password
+          password_confirmation: Confirm New Password
+    hints:
+      user:
+        current_password: You need to provide your current password to make any changes to your profile.
+        edit:
+          password: Fill in only if you want to change your password.
+          password_confirmation: Fill in only if you want to change your password.
+    placeholders:
+      user:
+        email: Enter a valid email address
+        new:
+          password: Enter a valid password
+          password_confirmation: Re-enter your password
+        edit:
+          current_password: Enter your current password
+          password: Enter a new password
+          password_confirmation: Re-enter your new password
+

@@ -32,7 +32,7 @@ describe User::SessionsController do
       end
       
       it "set the flash notice message" do
-        flash[:notice].should == "Signed in successfully."
+        flash[:notice].should == "Logged in successfully."
       end
     end
     
@@ -70,7 +70,7 @@ describe User::SessionsController do
     end
     
     it "set the flash notice message" do
-      flash[:notice].should == "Signed out successfully."
+      flash[:notice].should == "Logged out successfully."
     end
   end
   

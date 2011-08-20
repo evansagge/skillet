@@ -1,0 +1,42 @@
+en:
+  users:
+    headers:
+      register: Register
+      created: You're almost there      
+      show: User Account
+      edit: Edit Account
+      login: Login
+      forgot_password: Forgot your password?
+      change_password: Change your password
+      confirmation: Resend confirmation instructions
+      
+    links:
+      register: Register
+      login: Login
+      logout: Logout
+      edit: Edit account
+      delete: Delete account
+      need_an_account: Need an account? Register now.
+      already_have_an_account: Already have an account? Login now.
+      forgot_your_password: Forgot your password?
+      request_for_new_reset_password_token: Request for another request password token
+      didnt_receive_confirmation_instructions: Didn't receive your confirmation instructions?
+      
+    buttons:
+      register: Register
+      login: Login
+      update: Update account
+      send_password_reset_instructions: Send me password reset instructions
+      change_password: Change my password
+      resend_confirmation_instructions: Resend confirmation instructions
+      
+    registration:
+      confirmation_email_sent: We have sent you an email with instructions on how to confirm your registration. Please click on the link to complete your registration.
+      signed_up: Welcome! You have registered successfully.
+      
+    update:
+      updated: You updated your account successfully.
+        
+    destroy:
+      confirmation: Are you sure you want to delete your account?
+      success: Your account was successfully cancelled. We hope to see you again soon.

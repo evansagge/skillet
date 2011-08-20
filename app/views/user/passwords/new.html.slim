@@ -1,9 +1,9 @@
-h2 Forgot your password?
+h2 = t('users.headers.forgot_password')
 
 = simple_form_for @user, :url => user_password_path do |f|
   = f.error_notification
 
   = f.input :email, :required => true
-  = f.button :submit, "Send me reset password instructions"
+  = f.button :submit, t('users.buttons.send_password_reset_instructions')
 
   == render 'user/shared/links'

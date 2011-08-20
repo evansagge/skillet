@@ -1,5 +1,5 @@
 ul class="links"
-  li = link_to "Need an account? Sign up.", signup_path unless controller.controller_name == 'user'
-  li = link_to "Already have an account? Sign in.", login_path unless controller.controller_name == 'sessions'
-  li = link_to "Forgot your password?", new_user_password_path unless controller.controller_name == 'passwords'
-  li = link_to "Didn't receive your confirmation instructions?", new_user_confirmation_url unless controller.controller_name == 'confirmations'
+  li = link_to t('users.links.need_an_account'), register_path unless controller.controller_name == 'user'
+  li = link_to t('users.links.already_have_an_account'), login_path unless controller.controller_name == 'sessions'
+  li = link_to t('users.links.forgot_your_password'), new_user_password_path unless controller.controller_name == 'passwords'
+  li = link_to t('users.links.didnt_receive_confirmation_instructions'), new_user_confirmation_url unless controller.controller_name == 'confirmations'

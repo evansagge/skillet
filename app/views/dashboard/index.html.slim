@@ -3,5 +3,5 @@ h2 = "Welcome, #{current_user.email}!"
 p
   code = current_user.to_json
 
-p = link_to 'Edit Profile', edit_user_url
-p = link_to 'Logout', logout_url
+p = link_to t('users.links.edit'), edit_user_url
+p = link_to t('users.links.logout'), logout_url, method: 'delete'

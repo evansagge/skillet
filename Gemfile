@@ -4,10 +4,10 @@ gem 'rails', '3.1.0.rc5'
 gem 'mongoid', '~> 2.1'
 gem 'bson_ext'
 
-gem 'devise'
-
 gem 'slim'
 gem 'slim-rails'
+
+gem 'devise'
 gem 'simple_form'
 gem 'show_for'
 
@@ -25,29 +25,33 @@ gem 'jquery-rails'
 # Use unicorn as the web server
 gem 'unicorn'
 
-group :development do
+group :development, :test do
   gem 'capistrano'
   gem 'thin'
   gem 'ruby-debug19', :require => 'ruby-debug'
   
-  gem 'guard-spork'
+  gem 'spork'
+    
+  gem 'guard-rails'  
+  gem 'guard-pow'  
+  gem 'guard-bundler'  
   gem 'guard-rspec'
-  gem 'guard-bundler'
-  gem 'guard-pow'
+  gem 'guard-cucumber'  
+  gem 'guard-spork'  
   
   gem 'growl'
-end
 
-group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  
   gem 'rspec-rails', '~> 2.6'
   gem 'fabrication'
   gem 'forgery'
   gem 'database_cleaner'
   
   gem 'capybara'
-  # gem 'webrat'
   
-  gem 'spork'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'launchy'
 end

@@ -4,11 +4,11 @@ describe UserController do
   describe "routing" do
 
     it "routes to #new" do
-      get("/signup").should route_to "user#new"
+      get("/register").should route_to "user#new"
     end
     
     it "routes to #create" do
-      post("/signup").should route_to "user#create"
+      post("/register").should route_to "user#create"
     end    
 
     it "routes to #show" do

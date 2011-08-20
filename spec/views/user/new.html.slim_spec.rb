@@ -7,7 +7,7 @@ describe "user/new.html.slim" do
   end
 
   it "renders the new user form" do
-    rendered.should have_selector "form", action: signup_path, method: 'post' do
+    rendered.should have_selector "form", action: register_path, method: 'post' do
       rendered.should have_selector "input#user_email", name: "user[email]", type: "email"
       rendered.should have_selector "input#password", name: "user[current_password]", type: "password"
       rendered.should have_selector "input#password_confirmation", name: "user[current_password]", type: "password"

@@ -11,18 +11,10 @@ class UserController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
-
+    @user = User.create(params[:user])
     respond_with @user do |format|
-      if @user.save
-        format.html do
-          flash[:notice] = I18n.t('devise.registrations.inactive_signed_up')
-          render :created
-        end
-      else
-        format.html { render :new }
-      end
-    end  
+      format.html { render :created } if @user.persisted?
+    end
   end
   
   def show
@@ -34,14 +26,14 @@ class UserController < ApplicationController
   end  
 
   def update
-    @user.update_with_password params[:user]
-    respond_with @user, :notice => "Your user information has been updated.", :location => user_url
+    flash[:notice] = I18n.t('users.update.success') if @user.update_with_password(params[:user])
+    respond_with @user, location: user_url
   end
 
   def destroy
     @user.destroy
-    flash[:notice] = "Your account has been deleted."
     sign_out :user
+    flash[:notice] = I18n.t('users.destroy.success')
     respond_with @user, location: root_url
   end
   

@@ -10,6 +10,8 @@ namespace :project do
       puts "Renaming the project to #{new_project_name}"
       
       %w(
+        app/views/layouts/application.html.slim
+        config.ru
         config/application.rb
         config/environment.rb
         config/environments/development.rb

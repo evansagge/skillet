@@ -1,13 +1,13 @@
-h2 Change your password
+h2 = t('users.headers.change_password')
 
 = simple_form_for @user, url: user_password_path, html: { method: 'put' } do |f|
   = f.error_notification
   
   = f.full_error :reset_password_token
-  = f.input :reset_password_token, :as => :hidden  
-  = f.input :password, :label => "Password", :required => true
-  = f.input :password_confirmation, :label => "Confirm Password", :required => true
-  = f.button :submit, "Change my password"
+  = f.input :reset_password_token, as: 'hidden'
+  = f.input :password, hint: '', required: true
+  = f.input :password_confirmation, hint: '', required: true
+  = f.button :submit, t('users.buttons.change_password')
   
   ul class="links"
-    li = link_to "Request for another request password token", new_user_password_path
+    li = link_to t('users.links.request_for_new_reset_password_token'), new_user_password_path

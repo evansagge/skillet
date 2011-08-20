@@ -32,21 +32,24 @@ describe UserController do
 
         it "renders the 'created' template" do
           subject
-          response.should render_template :created
+          response.should render_template 'created'
         end
       end
 
       describe "with invalid params" do
-        before do
-          User.any_instance.stub(:save).and_return(false)
-          post :create, user: {}
+        subject { post :create, user: {} }
+        
+        it "does not create a new user" do
+          expect { subject }.to_not change(User, :count)
         end        
       
         it "assigns a newly created but unsaved user as @user" do
+          subject
           assigns(:user).should be_a_new User
         end
 
         it "re-renders the 'new' template" do
+          subject
           response.should render_template 'new'
         end
       end

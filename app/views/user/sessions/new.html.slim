@@ -1,14 +1,12 @@
-h2 Log In
+h2 = t('users.headers.login')
 
 = simple_form_for :user, url: user_session_path do |f|
   = f.error_notification
   
-  div class="inputs"
-    = f.input :email, autofocus: true, placeholder: 'Enter your e-mail address'
-    = f.input :password, placeholder: 'Enter your password'
-    = f.input :remember_me, as: :boolean, label: 'Remember me next time'
+  = f.input :email, autofocus: true
+  = f.input :password
+  = f.input :remember_me, as: :boolean
     
-  div class="actions"
-    = f.button :submit, 'Login'
+  = f.button :submit, t('users.buttons.login')
     
   == render 'user/shared/links'
